@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Image Gallery</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <h1>Image Gallery</h1>
+    <div class="filters">
+      <button data-filter="all" class="active">All</button>
+      <button data-filter="nature">Nature</button>
+      <button data-filter="city">City</button>
+      <button data-filter="people">People</button>
+    </div>
+  </header>
+
+  <main>
+    <div class="gallery" id="gallery">
+      <!-- Each item: data-category attribute. Replace src with your images -->
+      <div class="item" data-category="nature"><img src="https://picsum.photos/id/1018/600/400" alt="Nature 1"></div>
+      <div class="item" data-category="city"><img src="https://picsum.photos/id/1025/600/400" alt="City 1"></div>
+      <div class="item" data-category="people"><img src="https://picsum.photos/id/1005/600/400" alt="People 1"></div>
+      <div class="item" data-category="nature"><img src="https://picsum.photos/id/1015/600/400" alt="Nature 2"></div>
+      <div class="item" data-category="city"><img src="https://picsum.photos/id/1031/600/400" alt="City 2"></div>
+      <div class="item" data-category="people"><img src="https://picsum.photos/id/1001/600/400" alt="People 2"></div>
+    </div>
+  </main>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox hidden" aria-hidden="true">
+    <button class="close" id="lbClose" aria-label="Close">✕</button>
+    <button class="nav prev" id="lbPrev" aria-label="Previous">‹</button>
+    <img id="lbImage" src="" alt="Enlarged image" />
+    <button class="nav next" id="lbNext" aria-label="Next">›</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

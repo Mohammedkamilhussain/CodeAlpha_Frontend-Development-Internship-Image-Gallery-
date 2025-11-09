@@ -1,0 +1,24 @@
+*{box-sizing:border-box}
+body{font-family:system-ui,Arial;margin:0;background:#f6f7fb;color:#111}
+.site-header{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;background:#fff;box-shadow:0 2px 6px rgba(10,10,20,0.05)}
+.site-header h1{margin:0;font-size:18px}
+.filters button{margin-left:8px;padding:8px 12px;border:0;background:#eef;border-radius:6px;cursor:pointer}
+.filters button.active{background:#2b7cff;color:white}
+.gallery{display:grid;gap:12px;padding:18px;grid-template-columns:repeat(auto-fill,minmax(220px,1fr))}
+.item{position:relative;overflow:hidden;border-radius:8px;background:#ddd;cursor:pointer;transition:transform .25s ease, box-shadow .25s ease}
+.item img{width:100%;height:100%;object-fit:cover;display:block;transform:scale(1);transition:transform .35s ease}
+.item:hover img{transform:scale(1.05)}
+.item::after{content:"";position:absolute;inset:0;background:linear-gradient(to top, rgba(0,0,0,0.15), transparent)}
+/* Lightbox */
+.lightbox{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.7);z-index:999}
+.lightbox.hidden{display:none}
+.lightbox img{max-width:90vw;max-height:80vh;border-radius:6px;box-shadow:0 10px 30px rgba(0,0,0,0.5)}
+.lightbox .close{position:absolute;top:18px;right:18px;background:transparent;border:0;font-size:28px;color:#fff;cursor:pointer}
+.lightbox .nav{position:absolute;top:50%;transform:translateY(-50%);background:transparent;border:0;font-size:48px;color:#fff;cursor:pointer;padding:12px}
+.lightbox .prev{left:24px} .lightbox .next{right:24px}
+
+/* Responsive tweaks */
+@media (max-width:520px){
+  .filters{display:flex;flex-wrap:wrap;gap:6px}
+  .filters button{margin:4px 0}
+}
